@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  IsisCalendar
+
+  Created by jorge Sanmartin on 9/9/15.
+  Copyright (c) 2015 isis. All rights reserved.
+*/
+
+
+"sessions_title" = "Sessions";
+"map_events" = "Map";
+"title_error_network"="Error network";
+"message_error_network"="Please review your internet conection";
+"ok_button"="Ok";
+"reload_data"="Reload";
+"load_more"="Load More";

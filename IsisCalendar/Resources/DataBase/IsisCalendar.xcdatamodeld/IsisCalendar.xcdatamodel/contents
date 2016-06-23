@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14F27" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CDEvent" representedClassName="CDEvent" syncable="YES">
+        <attribute name="addressCountry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="packItemIdString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="subTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDEventImage" inverseName="event" inverseEntity="CDEventImage" syncable="YES"/>
+        <relationship name="links" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDEventLink" inverseName="event" inverseEntity="CDEventLink" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CDEventTag" inverseName="event" inverseEntity="CDEventTag" syncable="YES"/>
+    </entity>
+    <entity name="CDEventImage" representedClassName="CDEventImage" syncable="YES">
+        <attribute name="imageId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDEvent" inverseName="images" inverseEntity="CDEvent" syncable="YES"/>
+    </entity>
+    <entity name="CDEventLink" representedClassName="CDEventLink" syncable="YES">
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="targetSchema" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDEvent" inverseName="links" inverseEntity="CDEvent" syncable="YES"/>
+    </entity>
+    <entity name="CDEventTag" representedClassName="CDEventTag" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="event" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDEvent" inverseName="tags" inverseEntity="CDEvent" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDEvent" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="CDEventImage" positionX="-18" positionY="81" width="128" height="90"/>
+        <element name="CDEventLink" positionX="-54" positionY="63" width="128" height="90"/>
+        <element name="CDEventTag" positionX="0" positionY="90" width="128" height="75"/>
+    </elements>
+</model>
